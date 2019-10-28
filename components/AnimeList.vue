@@ -10,7 +10,7 @@
 import { createComponent, onMounted, reactive, ref } from '@vue/composition-api'
 import AnimeListItem, { Anime } from '~/components/AnimeListItem.vue'
 
-export type Data = {
+export type State = {
   animes: Anime[]
 }
 export default createComponent({
@@ -19,7 +19,7 @@ export default createComponent({
   },
   name: 'AnimeList',
   setup() {
-    const state: Data = reactive({
+    const state: State = reactive({
       animes: []
     })
     state.animes = [
