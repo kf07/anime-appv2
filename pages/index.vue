@@ -6,8 +6,27 @@
 
 <script lang="ts">
 import { createComponent, onMounted } from '@vue/composition-api'
+import { Context } from '@nuxt/types'
 import AnimeList from '~/components/AnimeList.vue'
+
+interface AsyncData {
+  article: {
+    createdAt: string
+    title: string
+    author: string
+    body: string
+  }
+}
 export default createComponent({
+  async asyncData({ $axios }: Context): Promise<AsyncData> {
+    const { data } = await $axios.get(
+      `http://api.moemoe.tokyo/anime/v1/master/2015/2`
+    )
+    return { article: data }
+  },
+  mounted() {
+    console.log(this.article)
+  },
   components: {
     AnimeList
   },
