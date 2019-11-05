@@ -1,5 +1,16 @@
 <template>
-  <div>{{ anime.title }}</div>
+  <div>
+    <div>{{ anime.title }}</div>
+    <div>
+      <a
+        :href="`https://twitter.com/${anime.twitter_account}`"
+        target="_blank"
+        rel="noopener"
+      >
+        {{ anime.twitter_account }}</a
+      >
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
