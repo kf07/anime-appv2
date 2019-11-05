@@ -7,12 +7,19 @@
 </template>
 
 <script lang="ts">
-import { createComponent, onMounted, reactive, ref } from '@vue/composition-api'
+import {
+  createComponent,
+  onMounted,
+  reactive,
+  ref,
+  computed
+} from '@vue/composition-api'
 import axios from 'axios'
 import AnimeListItem, { Anime } from '~/components/AnimeListItem.vue'
 
 export type State = {
   animes: Anime[]
+  favorite: number[]
 }
 
 export default createComponent({
@@ -22,20 +29,31 @@ export default createComponent({
   name: 'AnimeList',
   setup() {
     const state: State = reactive({
-      animes: []
+      animes: [],
+      favorite: []
     })
-    const list: any = ref()
+    const favoriteList = computed(() =>
+      state.animes.filter(function(item) {
+        console.log(item.id)
+        // return item.id.indexOf(state.favorite) > 0
+        return 0
+      })
+    )
     const getData = () => {
       axios
-        .get(`http://api.moemoe.tokyo/anime/v1/master/2015/2`)
+        .get(`http://api.moemoe.tokyo/anime/v1/master/2015`)
         .then(response => (state.animes = response.data))
+    }
+    const getFavorite = () => {
+      state.favorite = [124, 127, 135, 142]
     }
     onMounted(() => {
       getData()
+      getFavorite()
     })
     return {
       state,
-      list
+      favoriteList
     }
   }
   // async asyncData({ $axios }: Context): Promise<AsyncData> {
