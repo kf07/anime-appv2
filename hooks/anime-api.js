@@ -9,10 +9,12 @@ export const useAnimeApi = () => {
   })
 
   const getData = () => {
-    axios.get(`http://api.moemoe.tokyo/anime/v1/master/2015`).then(response => {
-      state.animes = response.data
-      state.loading = false
-    })
+    axios
+      .get(`http://api.moemoe.tokyo/anime/v1/master/${state.year}`)
+      .then(response => {
+        state.animes = response.data
+        state.loading = false
+      })
   }
 
   watch(() => {

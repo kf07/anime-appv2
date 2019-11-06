@@ -9,12 +9,17 @@
 </template>
 
 <script>
-import { ref } from '@vue/composition-api'
+import { ref, watch } from '@vue/composition-api'
 export default {
   name: 'YearSelect',
   props: ['year'],
   setup({ year }, { emit }) {
     const animeYear = ref(year)
+
+    watch(() => {
+      emit('refine', animeYear.value)
+      console.log(animeYear.value)
+    })
     return {
       animeYear
     }
