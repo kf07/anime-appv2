@@ -1,16 +1,19 @@
 <template>
   <div>
-    <AnimeList />
+    <!--    <AnimeList />-->
+    <Anime />
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent, onMounted } from '@vue/composition-api'
 import AnimeList from '~/components/AnimeList.vue'
+import Anime from '~/components/Anime.vue'
 
 export default createComponent({
   components: {
-    AnimeList
+    AnimeList,
+    Anime
   },
   setup() {
     onMounted(() => {

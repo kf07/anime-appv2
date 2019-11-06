@@ -1,52 +1,22 @@
 <template>
-  <ul>
-    <li v-for="item in state.animes" :key="item.id">
-      <AnimeListItem :anime="item" />
-    </li>
-  </ul>
+  <div>
+    <ul>
+      <AnimeListItem v-for="anime in animes" :key="anime.id" :anime="anime" />
+    </ul>
+  </div>
 </template>
 
-<script lang="ts">
-import { createComponent, onMounted, reactive, ref } from '@vue/composition-api'
-import axios from 'axios'
-import AnimeListItem, { Anime } from '~/components/AnimeListItem.vue'
-
-export type State = {
-  animes: Anime[]
-}
-
-export default createComponent({
+<script>
+import { computed } from '@vue/composition-api'
+import AnimeListItem from '~/components/AnimeListItem'
+export default {
+  name: 'AnimeList',
+  props: ['animes'],
   components: {
     AnimeListItem
   },
-  name: 'AnimeList',
-  setup() {
-    const state: State = reactive({
-      animes: []
-    })
-    const list: any = ref()
-    const getData = () => {
-      axios
-        .get(`http://api.moemoe.tokyo/anime/v1/master/2015/2`)
-        .then(response => (state.animes = response.data))
-    }
-    onMounted(() => {
-      getData()
-    })
-    return {
-      state,
-      list
-    }
+  setup(anime) {
+    return { anime }
   }
-  // async asyncData({ $axios }: Context): Promise<AsyncData> {
-  //   console.log(`aaa${$axios}`)
-  //   const { data } = await $axios.get(
-  //
-  //   )
-  //   console.log('eee')
-  //   return { article: data }
-  // }
-})
+}
 </script>
-
-<style scoped></style>
