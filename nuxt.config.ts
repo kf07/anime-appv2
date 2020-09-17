@@ -2,7 +2,7 @@ import { Configuration } from '@nuxt/types'
 // import pkg from ('./package')
 
 const nuxtConfig: Configuration = {
-  mode: 'universal',
+  mode: 'spa',
 
   /*
    ** Headers of the page
