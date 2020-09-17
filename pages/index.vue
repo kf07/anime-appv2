@@ -14,11 +14,6 @@ export default createComponent({
   components: {
     AnimeList,
     Anime
-  },
-  setup() {
-    onMounted(() => {
-      console.log('テスト')
-    })
   }
 })
 </script>

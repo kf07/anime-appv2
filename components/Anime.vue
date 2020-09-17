@@ -16,7 +16,6 @@ export default {
     const state = useAnimeApi()
 
     const handleChange = year => {
-      console.log(year)
       state.year = year
       state.loading = true
     }
