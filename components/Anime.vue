@@ -1,6 +1,13 @@
 <template>
   <div class="app">
-    <YearSelect :year="state.year" @refine="handleChange" />
+    <div class="flex">
+      <YearSelect :year="state.year" class="year-select" @refine="yearChange" />
+      <SeasonSelect
+        :season="state.season"
+        class="season-select"
+        @refine="seasonChange"
+      />
+    </div>
     <AnimeList :animes="state.animes" />
   </div>
 </template>
@@ -8,23 +15,38 @@
 <script>
 import { useAnimeApi } from '../hooks/anime-api'
 import YearSelect from './YearSelect'
+import SeasonSelect from './SeasonSelect'
 import AnimeList from '~/components/AnimeList'
 export default {
   name: 'Anime',
-  components: { AnimeList, YearSelect },
+  components: { SeasonSelect, AnimeList, YearSelect },
   setup() {
     const state = useAnimeApi()
 
-    const handleChange = year => {
+    const yearChange = year => {
       state.year = year
       state.loading = true
     }
+
+    const seasonChange = season => {
+      state.season = season
+      state.loading = true
+    }
+
     return {
       state,
-      handleChange
+      yearChange,
+      seasonChange
     }
   }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.flex {
+  display: flex;
+}
+.year-select {
+  margin-right: 40px;
+}
+</style>

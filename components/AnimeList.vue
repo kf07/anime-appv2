@@ -11,10 +11,10 @@ import { computed } from '@nuxtjs/composition-api'
 import AnimeListItem from '~/components/AnimeListItem'
 export default {
   name: 'AnimeList',
-  props: ['animes'],
   components: {
     AnimeListItem
   },
+  props: ['animes'],
   setup(anime) {
     return { anime }
   }
