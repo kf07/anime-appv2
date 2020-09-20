@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted } from '@nuxtjs/composition-api'
 import AnimeList from '~/components/AnimeList.vue'
 import Anime from '~/components/Anime.vue'
 

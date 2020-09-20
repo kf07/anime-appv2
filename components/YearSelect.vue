@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { ref, watch } from '@vue/composition-api'
+import { ref, watch } from '@nuxtjs/composition-api'
 export default {
   name: 'YearSelect',
   props: ['year'],

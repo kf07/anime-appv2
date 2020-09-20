@@ -30,7 +30,7 @@ const nuxtConfig: Configuration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/composition-api'],
+  plugins: [],
 
   /*
    ** Nuxt.js modules
@@ -40,12 +40,17 @@ const nuxtConfig: Configuration = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: ['@nuxt/typescript-build','@nuxtjs/composition-api'],
   /*
    ** Axios module configuration
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  generate: {
+    // choose to suit your project
+    interval: 2000,
   },
 
   /*
