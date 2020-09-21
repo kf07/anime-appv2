@@ -3,10 +3,10 @@
 </template>
 
 <script lang="ts">
-import { createComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted } from '@nuxtjs/composition-api'
 
 export type Favorite = {}
-export default createComponent({
+export default defineComponent({
   name: 'FavoriteList'
 })
 </script>

@@ -6,19 +6,14 @@
 </template>
 
 <script lang="ts">
-import { createComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted } from '@nuxtjs/composition-api'
 import AnimeList from '~/components/AnimeList.vue'
 import Anime from '~/components/Anime.vue'
 
-export default createComponent({
+export default defineComponent({
   components: {
     AnimeList,
     Anime
-  },
-  setup() {
-    onMounted(() => {
-      console.log('テスト')
-    })
   }
 })
 </script>

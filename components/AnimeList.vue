@@ -1,22 +1,32 @@
 <template>
   <div>
-    <ul>
+    <ul class="anime-list">
       <AnimeListItem v-for="anime in animes" :key="anime.id" :anime="anime" />
     </ul>
   </div>
 </template>
 
 <script>
-import { computed } from '@vue/composition-api'
+import { computed } from '@nuxtjs/composition-api'
 import AnimeListItem from '~/components/AnimeListItem'
 export default {
   name: 'AnimeList',
-  props: ['animes'],
   components: {
     AnimeListItem
   },
+  props: ['animes'],
   setup(anime) {
     return { anime }
   }
 }
 </script>
+
+<style>
+.anime-list {
+  display: grid;
+  grid-auto-rows: 5em;
+  gap: 10px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+</style>

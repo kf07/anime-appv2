@@ -2,7 +2,10 @@ import { Configuration } from '@nuxt/types'
 // import pkg from ('./package')
 
 const nuxtConfig: Configuration = {
-  mode: 'universal',
+  mode: 'spa',
+  server: {
+    port: 8000
+  },
 
   /*
    ** Headers of the page
@@ -30,7 +33,7 @@ const nuxtConfig: Configuration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/composition-api'],
+  plugins: [],
 
   /*
    ** Nuxt.js modules
@@ -38,14 +41,28 @@ const nuxtConfig: Configuration = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'nuxt-fontawesome'
   ],
-  buildModules: ['@nuxt/typescript-build'],
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: ['faTwitter', 'faGithub']
+      }
+    ]
+  },
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api'],
   /*
    ** Axios module configuration
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  generate: {
+    // choose to suit your project
+    interval: 2000
   },
 
   /*

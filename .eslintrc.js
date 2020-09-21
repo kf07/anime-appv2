@@ -20,6 +20,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'no-console': 'off',
-    'no-unused-vars': 'off'
+    'no-unused-vars': 'off',
+    'vue/require-prop-types': 'off'
   }
 }

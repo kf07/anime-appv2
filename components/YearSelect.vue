@@ -6,21 +6,21 @@
       <option value="2017">2017</option>
       <option value="2018">2018</option>
       <option value="2019">2019</option>
+      <option value="2020">2020</option>
     </select>
   </form>
 </template>
 
 <script>
-import { ref, watch } from '@vue/composition-api'
+import { ref, watchEffect } from '@nuxtjs/composition-api'
 export default {
   name: 'YearSelect',
   props: ['year'],
   setup({ year }, { emit }) {
     const animeYear = ref(year)
 
-    watch(() => {
+    watchEffect(() => {
       emit('refine', animeYear.value)
-      console.log(animeYear.value)
     })
     return {
       animeYear

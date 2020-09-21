@@ -15,16 +15,19 @@
   },
   "dependencies": {
     "@nuxt/types": "^0.3.4",
-    "@nuxt/typescript-runtime": "^0.2.0",
+    "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.8.0",
+    "@nuxtjs/composition-api": "^0.12.5",
     "@nuxtjs/pwa": "^2.6.0",
-    "@vue/composition-api": "^0.3.2",
     "axios": "^0.19.0",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.10.2"
+    "nuxt": "^2.14.5"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "@nuxt/typescript-build": "^2.0.3",
     "@nuxtjs/eslint-config": "^0.0.1",
     "@typescript-eslint/eslint-plugin": "^2.3.2",
     "@typescript-eslint/parser": "^2.3.2",
@@ -42,6 +45,7 @@
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "nodemon": "^1.18.9",
+    "nuxt-fontawesome": "^0.4.0",
     "prettier": "^1.16.4"
   }
 }
