@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul>
+    <ul class="anime-list">
       <AnimeListItem v-for="anime in animes" :key="anime.id" :anime="anime" />
     </ul>
   </div>
@@ -20,3 +20,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.anime-list {
+  display: grid;
+  grid-auto-rows: 5em;
+  gap: 10px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+</style>

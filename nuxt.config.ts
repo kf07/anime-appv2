@@ -3,6 +3,9 @@ import { Configuration } from '@nuxt/types'
 
 const nuxtConfig: Configuration = {
   mode: 'spa',
+  server: {
+    port: 8000
+  },
 
   /*
    ** Headers of the page

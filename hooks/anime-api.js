@@ -1,4 +1,4 @@
-import { reactive, watch } from '@nuxtjs/composition-api'
+import { reactive, watchEffect } from '@nuxtjs/composition-api'
 import axios from 'axios'
 
 export const useAnimeApi = () => {
@@ -11,14 +11,16 @@ export const useAnimeApi = () => {
 
   const getData = () => {
     axios
-      .get(`https://api.moemoe.tokyo/anime/v1/master/${state.year}/${state.season}`)
+      .get(
+        `https://api.moemoe.tokyo/anime/v1/master/${state.year}/${state.season}`
+      )
       .then(response => {
         state.animes = response.data
         state.loading = false
       })
   }
 
-  watch(() => {
+  watchEffect(() => {
     getData()
   })
   return state

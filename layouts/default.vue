@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheHeader :title="'composition-API'" />
+    <TheHeader :title="'アニメリスト'" />
     <nuxt />
   </div>
 </template>

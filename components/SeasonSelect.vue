@@ -10,14 +10,14 @@
 </template>
 
 <script>
-import { ref, watch } from '@nuxtjs/composition-api'
+import { ref, watchEffect } from '@nuxtjs/composition-api'
 export default {
   name: 'SeasonSelect',
   props: ['season'],
   setup({ season }, { emit }) {
     const animeSeason = ref(season)
 
-    watch(() => {
+    watchEffect(() => {
       emit('refine', animeSeason.value)
     })
     return {

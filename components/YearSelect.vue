@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import { ref, watch } from '@nuxtjs/composition-api'
+import { ref, watchEffect } from '@nuxtjs/composition-api'
 export default {
   name: 'YearSelect',
   props: ['year'],
   setup({ year }, { emit }) {
     const animeYear = ref(year)
 
-    watch(() => {
+    watchEffect(() => {
       emit('refine', animeYear.value)
     })
     return {
