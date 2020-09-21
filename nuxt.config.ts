@@ -41,9 +41,18 @@ const nuxtConfig: Configuration = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'nuxt-fontawesome'
   ],
-  buildModules: ['@nuxt/typescript-build','@nuxtjs/composition-api'],
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: ['faTwitter', 'faGithub']
+      }
+    ]
+  },
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api'],
   /*
    ** Axios module configuration
    */
@@ -53,7 +62,7 @@ const nuxtConfig: Configuration = {
 
   generate: {
     // choose to suit your project
-    interval: 2000,
+    interval: 2000
   },
 
   /*

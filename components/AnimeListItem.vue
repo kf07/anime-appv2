@@ -6,9 +6,11 @@
       }}</a>
     </div>
     <div>
-      <a :href="`https://twitter.com/${anime.twitter_account}`">{{
-        anime.twitter_account
-      }}</a>
+      <a :href="`https://twitter.com/${anime.twitter_account}`"
+        ><font-awesome-icon :icon="['fab', 'twitter']" />{{
+          anime.twitter_account
+        }}</a
+      >
     </div>
   </li>
 </template>
