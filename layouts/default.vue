@@ -1,6 +1,6 @@
 <template>
   <div class="app-wrapper">
-    <TheHeader :title="'アニメリスト'" />
+    <TheHeader :title="'アニメリスト'" class="header" />
     <nuxt />
   </div>
 </template>
@@ -34,6 +34,12 @@ html {
 
 ul {
   padding: 0;
+}
+select {
+  font-size: 16px;
+}
+.header {
+  margin-bottom: 10px;
 }
 .app-wrapper {
   padding: 10px;
