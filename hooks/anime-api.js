@@ -11,9 +11,7 @@ export const useAnimeApi = () => {
 
   const getData = () => {
     axios
-      .get(
-        `http://api.moemoe.tokyo/anime/v1/master/${state.year}/${state.season}`
-      )
+      .get(`https://api.moemoe.tokyo/anime/v1/master/${state.year}/${state.season}`)
       .then(response => {
         state.animes = response.data
         state.loading = false
