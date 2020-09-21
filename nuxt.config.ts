@@ -11,6 +11,7 @@ const nuxtConfig: Configuration = {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: { lang: 'ja' },
     title: 'anime app2',
     meta: [
       { charset: 'utf-8' },

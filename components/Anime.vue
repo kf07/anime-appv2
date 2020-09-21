@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div class="flex">
+    <div class="select-box">
       <YearSelect :year="state.year" class="year-select" @refine="yearChange" />
       <SeasonSelect
         :season="state.season"
@@ -43,10 +43,11 @@ export default {
 </script>
 
 <style scoped>
-.flex {
+.select-box {
   display: flex;
+  margin-bottom: 15px;
 }
 .year-select {
-  margin-right: 40px;
+  margin-right: 10px;
 }
 </style>

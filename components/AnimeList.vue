@@ -24,9 +24,7 @@ export default {
 <style>
 .anime-list {
   display: grid;
-  grid-auto-rows: 5em;
   gap: 10px;
-  padding: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));
 }
 </style>
